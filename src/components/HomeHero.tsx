@@ -11,16 +11,20 @@ import {
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1800&q=90",
-    alt: "Caregiver supporting an older person at home",
+    src: "https://images.unsplash.com/photo-1765896387398-1e1ae8d2eb85?auto=format&fit=crop&w=1800&q=90",
+    alt: "Caregiver talking with an older person",
   },
   {
-    src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=90",
-    alt: "Caregiver and older person sharing a warm moment",
+    src: "https://images.unsplash.com/photo-1756312177216-f41bb3ac7205?auto=format&fit=crop&w=1800&q=90",
+    alt: "Older person smiling at home",
   },
   {
-    src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=90",
-    alt: "Caregiver supporting an older person in the community",
+    src: "https://images.unsplash.com/photo-1773227059881-ef8ecf22aac8?auto=format&fit=crop&w=1800&q=90",
+    alt: "Older people sharing conversation and connection",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1773227060446-93239a553f1f?auto=format&fit=crop&w=1800&q=90",
+    alt: "Caregiver and older people enjoying a community setting",
   },
 ];
 
