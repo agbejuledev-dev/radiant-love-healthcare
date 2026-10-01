@@ -28,7 +28,7 @@ const slides = [
   },
 ];
 
-const AUTOPLAY_DELAY = 5500;
+const AUTOPLAY_DELAY = 3000;
 
 export default function HomeHero() {
   const [activeSlide, setActiveSlide] = useState(0);
