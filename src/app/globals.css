@@ -584,6 +584,27 @@ video {
   order: 1;
 }
 
+.story.noPhoto {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 95px 0;
+}
+
+.story.noPhoto .storyCopy {
+  width: min(900px, 100%);
+  max-width: 900px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.story.noPhoto .storyCopy .eyebrow {
+  justify-content: center;
+}
+
+.story.noPhoto .storyCopy a {
+  justify-content: center;
+}
+
 .storyPhoto {
   position: relative;
   height: 475px;
