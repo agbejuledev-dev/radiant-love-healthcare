@@ -11,8 +11,8 @@ import {
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1756312177216-f41bb3ac7205?auto=format&fit=crop&w=1800&q=90",
-    alt: "Older person smiling at home",
+    src: "https://assets.noviams.com/novi-file-uploads/lam/Caregiver_and_resident.jpg",
+    alt: "Caregiver in blue uniform sharing a joyful moment with an older woman",
   },
   {
     src: "https://images.unsplash.com/photo-1773227059881-ef8ecf22aac8?auto=format&fit=crop&w=1800&q=90",
