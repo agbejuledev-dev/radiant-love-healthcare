@@ -233,7 +233,8 @@ video {
 
 .heroImage {
   object-fit: cover;
-  filter: brightness(1.08) saturate(0.96);\n}
+  filter: brightness(1.08) saturate(0.96);
+}
 
 .heroOverlay {
   position: absolute;
