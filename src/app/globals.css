@@ -211,7 +211,7 @@ video {
 .heroSlides {
   position: absolute;
   inset: 0;
-  z-index: -3;
+  z-index: 0;
 }
 
 .heroSlide {
@@ -233,13 +233,13 @@ video {
 
 .heroImage {
   object-fit: cover;
+  object-position: center center;
   filter: brightness(1.14) saturate(1);
-}
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.18) 0%,
