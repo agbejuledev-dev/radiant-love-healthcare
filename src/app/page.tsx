@@ -38,7 +38,7 @@ export default function Home() {
 
       <section className="storyRows">
         <Story image="https://images.unsplash.com/photo-1765896387398-1e1ae8d2eb85?auto=format&fit=crop&w=1400&q=90" title="Supplying Healthcare Professionals to Clients" text="We help healthcare organisations access nurses, healthcare assistants, support workers and other professionals for contract, flexible and permanent staffing needs." />
-        <Story reverse image="https://images.unsplash.com/photo-1764006145420-df3006edf060?auto=format&fit=crop&w=1400&q=90" title="Nurse and Care Jobs Available" text="We are always looking to hear from qualified and experienced healthcare professionals. Browse current vacancies and take the next step towards your next opportunity." />
+        <Story reverse image="https://images.unsplash.com/photo-1765896387387-0538bc9f997e?auto=format&fit=crop&w=1400&q=90" title="Nurse and Care Jobs Available" text="We are always looking to hear from qualified and experienced healthcare professionals. Browse current vacancies and take the next step towards your next opportunity." />
         <Story image="https://images.unsplash.com/photo-1773227059522-acc3ae46abdc?auto=format&fit=crop&w=1400&q=88" title="Recruitment That Works For You" text="From contract recruitment and flexible staffing to permanent recruitment and remote staffing, we keep the process clear and focused on the right fit." />
       </section>
 
