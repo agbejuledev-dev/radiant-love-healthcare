@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 const slides = [
   {
@@ -23,52 +28,142 @@ const AUTOPLAY_DELAY = 5500;
 
 export default function HomeHero() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
+  /*
+   * Move to the next slide.
+   */
   const nextSlide = useCallback(() => {
     setActiveSlide((current) => (current + 1) % slides.length);
   }, []);
 
+  /*
+   * Move to the previous slide.
+   */
   const previousSlide = useCallback(() => {
-    setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
+    setActiveSlide(
+      (current) => (current - 1 + slides.length) % slides.length,
+    );
   }, []);
 
+  /*
+   * Detect user's reduced-motion preference.
+   */
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updatePreference = () => setReducedMotion(mediaQuery.matches);
+    const mediaQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    const updatePreference = () => {
+      setReducedMotion(mediaQuery.matches);
+    };
+
     updatePreference();
+
     mediaQuery.addEventListener("change", updatePreference);
-    return () => mediaQuery.removeEventListener("change", updatePreference);
+
+    return () => {
+      mediaQuery.removeEventListener(
+        "change",
+        updatePreference,
+      );
+    };
   }, []);
 
+  /*
+   * Pause when the browser tab is hidden.
+   */
   useEffect(() => {
-    if (isPaused || reducedMotion) return;
-    const timer = window.setInterval(nextSlide, AUTOPLAY_DELAY);
-    return () => window.clearInterval(timer);
-  }, [isPaused, reducedMotion, nextSlide]);
+    const handleVisibilityChange = () => {
+      setIsHidden(document.hidden);
+    };
 
-  useEffect(() => {
-    const handleVisibilityChange = () => setIsPaused(document.hidden);
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+    document.addEventListener(
+      "visibilitychange",
+      handleVisibilityChange,
+    );
+
+    return () => {
+      document.removeEventListener(
+        "visibilitychange",
+        handleVisibilityChange,
+      );
+    };
   }, []);
 
-  const handleTouchStart = (event: React.TouchEvent) => {
-    touchStartX.current = event.touches[0]?.clientX ?? null;
+  /*
+   * Automatic carousel.
+   *
+   * It intentionally pauses while the user is hovering
+   * over the hero and when the browser tab is hidden.
+   */
+  useEffect(() => {
+    if (reducedMotion || isHovered || isHidden) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, AUTOPLAY_DELAY);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [isHovered, isHidden, reducedMotion]);
+
+  /*
+   * Reset autoplay after manual navigation.
+   *
+   * Changing activeSlide causes the autoplay effect above
+   * to restart its 5.5 second timer.
+   */
+  const goToSlide = useCallback((index: number) => {
+    setActiveSlide(index);
+  }, []);
+
+  /*
+   * Touch/swipe support.
+   */
+  const handleTouchStart = (
+    event: React.TouchEvent<HTMLElement>,
+  ) => {
+    touchStartX.current =
+      event.touches[0]?.clientX ?? null;
+
     touchEndX.current = null;
   };
 
-  const handleTouchMove = (event: React.TouchEvent) => {
-    touchEndX.current = event.touches[0]?.clientX ?? null;
+  const handleTouchMove = (
+    event: React.TouchEvent<HTMLElement>,
+  ) => {
+    touchEndX.current =
+      event.touches[0]?.clientX ?? null;
   };
 
   const handleTouchEnd = () => {
-    if (touchStartX.current === null || touchEndX.current === null) return;
-    const distance = touchStartX.current - touchEndX.current;
-    if (Math.abs(distance) >= 50) distance > 0 ? nextSlide() : previousSlide();
+    if (
+      touchStartX.current === null ||
+      touchEndX.current === null
+    ) {
+      return;
+    }
+
+    const distance =
+      touchStartX.current - touchEndX.current;
+
+    if (Math.abs(distance) >= 50) {
+      if (distance > 0) {
+        nextSlide();
+      } else {
+        previousSlide();
+      }
+    }
+
     touchStartX.current = null;
     touchEndX.current = null;
   };
@@ -77,56 +172,139 @@ export default function HomeHero() {
     <section
       className="hero"
       aria-label="Radiant-love Healthcare recruitment"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="heroSlides" aria-hidden="true">
-        {slides.map((slide, index) => (
-          <div key={slide.src} className={`heroSlide ${index === activeSlide ? "heroSlideActive" : ""}`}>
-            <Image
-              src={slide.src}
-              alt=""
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className="heroImage"
-            />
-          </div>
-        ))}
+      {/* =====================================================
+          BACKGROUND SLIDES
+          ===================================================== */}
+
+      <div
+        className="heroSlides"
+        aria-hidden="true"
+      >
+        {slides.map((slide, index) => {
+          const isActive = index === activeSlide;
+
+          return (
+            <div
+              key={slide.src}
+              className={`heroSlide ${
+                isActive ? "heroSlideActive" : ""
+              }`}
+            >
+              <Image
+                src={slide.src}
+                alt=""
+                fill
+                priority={index === 0}
+                loading={index === 0 ? undefined : "lazy"}
+                sizes="100vw"
+                className="heroImage"
+              />
+            </div>
+          );
+        })}
       </div>
 
-      <div className="heroOverlay" />
+      {/* Dark image overlay */}
+      <div
+        className="heroOverlay"
+        aria-hidden="true"
+      />
 
-      <div key={activeSlide} className="heroText heroTextAnimated">
-        <span>Healthcare recruitment &amp; staffing</span>
-        <h1>Connecting people with opportunities that matter.</h1>
-        <p>Helping healthcare professionals find rewarding roles and organisations find dependable people across the UK.</p>
+      {/* =====================================================
+          HERO TEXT
+          ===================================================== */}
+
+      <div
+        key={activeSlide}
+        className="heroText heroTextAnimated"
+      >
+        <span>
+          Healthcare recruitment &amp; staffing
+        </span>
+
+        <h1>
+          Connecting people with opportunities that
+          matter.
+        </h1>
+
+        <p>
+          Helping healthcare professionals find
+          rewarding roles and organisations find
+          dependable people across the UK.
+        </p>
       </div>
 
-      <button type="button" className="heroArrow left" onClick={previousSlide} aria-label="Previous slide">
-        <ChevronLeft size={23} strokeWidth={1.5} />
-      </button>
-      <button type="button" className="heroArrow right" onClick={nextSlide} aria-label="Next slide">
-        <ChevronRight size={23} strokeWidth={1.5} />
+      {/* =====================================================
+          PREVIOUS BUTTON
+          ===================================================== */}
+
+      <button
+        type="button"
+        className="heroArrow left"
+        onClick={previousSlide}
+        aria-label="Previous hero image"
+      >
+        <ChevronLeft
+          size={23}
+          strokeWidth={1.5}
+        />
       </button>
 
-      <div className="dots" aria-label="Hero slides">
+      {/* =====================================================
+          NEXT BUTTON
+          ===================================================== */}
+
+      <button
+        type="button"
+        className="heroArrow right"
+        onClick={nextSlide}
+        aria-label="Next hero image"
+      >
+        <ChevronRight
+          size={23}
+          strokeWidth={1.5}
+        />
+      </button>
+
+      {/* =====================================================
+          SLIDE INDICATORS
+          ===================================================== */}
+
+      <div
+        className="dots"
+        aria-label="Hero slide navigation"
+      >
         {slides.map((slide, index) => (
           <button
             key={slide.src}
             type="button"
-            className={index === activeSlide ? "dot dotActive" : "dot"}
-            onClick={() => setActiveSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === activeSlide ? "true" : undefined}
+            className={
+              index === activeSlide
+                ? "dot dotActive"
+                : "dot"
+            }
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to hero slide ${index + 1}`}
+            aria-current={
+              index === activeSlide
+                ? "true"
+                : undefined
+            }
           />
         ))}
       </div>
 
-      <div className="heroCurve" aria-hidden="true" />
+      {/* Curved bottom edge */}
+      <div
+        className="heroCurve"
+        aria-hidden="true"
+      />
     </section>
   );
 }
