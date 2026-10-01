@@ -78,7 +78,7 @@ function Story({ image, title, text, reverse = false, noPhoto = false }: { image
   return (
     <div className={noPhoto ? "story noPhoto" : reverse ? "story reverse" : "story"}>
       {image && <div className="storyPhoto">
-        <Image src={image} alt={title} fill sizes="(max-width: 800px) 100vw, 45vw" />
+        <img src={image} alt={title} className="storyImage" loading="lazy" />
       </div>}
       <div className="storyCopy">
         <span className="eyebrow">Radiant-love Healthcare</span>
