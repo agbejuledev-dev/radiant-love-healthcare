@@ -12,15 +12,15 @@ import {
 const slides = [
   {
     src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1800&q=90",
-    alt: "Healthcare professional providing care",
+    alt: "Caregiver supporting an older person at home",
   },
   {
     src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=90",
-    alt: "Healthcare professional working with a patient",
+    alt: "Caregiver and older person sharing a warm moment",
   },
   {
     src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=90",
-    alt: "Healthcare professional using technology",
+    alt: "Caregiver supporting an older person in the community",
   },
 ];
 
