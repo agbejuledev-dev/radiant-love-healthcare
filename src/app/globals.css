@@ -234,7 +234,7 @@ video {
 .heroImage {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(1.14) saturate(1);
+  filter: brightness(1.22) saturate(1.08) contrast(1.08);
 }
 
 .heroOverlay {
@@ -243,10 +243,10 @@ video {
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.08) 38%,
-    rgba(0, 0, 0, 0.025) 72%,
-    rgba(0, 0, 0, 0.01) 100%
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.045) 38%,
+    rgba(0, 0, 0, 0.012) 72%,
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
@@ -256,9 +256,9 @@ video {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.015),
     transparent 55%,
-    rgba(0, 0, 0, 0.10)
+    rgba(0, 0, 0, 0.045)
   );
 }
 
@@ -635,7 +635,7 @@ video {
 
 .storyPhoto img {
   object-fit: cover;
-  filter: brightness(1.025) saturate(1.055) contrast(1.055);
+  filter: brightness(1.12) saturate(1.10) contrast(1.10);
   transform: scale(1.012);
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
 }
@@ -650,7 +650,7 @@ video {
 
 .storyPhoto:hover img {
   transform: scale(1.045);
-  filter: brightness(1.04) saturate(1.07) contrast(1.06);
+  filter: brightness(1.16) saturate(1.12) contrast(1.12);
 }
 
 .storyCopy {
@@ -942,6 +942,14 @@ video {
 
 .largeImage img {
   object-fit: cover;
+  filter: brightness(1.12) saturate(1.10) contrast(1.10);
+  transform: scale(1.012);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+}
+
+.largeImage:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.16) saturate(1.12) contrast(1.12);
 }
 
 .statement {
@@ -1513,9 +1521,9 @@ video {
   .heroOverlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.38) 0%,
-      rgba(0, 0, 0, 0.22) 65%,
-      rgba(0, 0, 0, 0.12) 100%
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.09) 65%,
+      rgba(0, 0, 0, 0.035) 100%
     );
   }
 
