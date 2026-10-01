@@ -1,3 +1,3 @@
 import type { NextConfig } from "next";
-const nextConfig: NextConfig={images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"},{protocol:"https",hostname:"images.stockcake.com"}]}};
+const nextConfig: NextConfig={images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"},{protocol:"https",hostname:"images.stockcake.com"},{protocol:"https",hostname:"allhealthlink.com"}]}};
 export default nextConfig;
