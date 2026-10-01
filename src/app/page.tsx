@@ -6,9 +6,9 @@ import JobCard from "@/components/JobCard";
 import HomeHero from "@/components/HomeHero";
 
 const images = [
-  "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=88",
-  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=90",
-  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=88",
+  "https://images.unsplash.com/photo-1773227055624-07b515ba87c5?auto=format&fit=crop&w=1400&q=88",
+  "https://images.unsplash.com/photo-1773227060422-ee506b865417?auto=format&fit=crop&w=1400&q=88",
+  "https://images.unsplash.com/photo-1773227054058-afd18b554e8f?auto=format&fit=crop&w=1400&q=88",
 ];
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
       <section className="storyRows">
         <Story image={images[0]} title="Supplying Healthcare Professionals to Clients" text="We help healthcare organisations access nurses, healthcare assistants, support workers and other professionals for contract, flexible and permanent staffing needs." />
         <Story reverse image={images[2]} title="Nurse and Care Jobs Available" text="We are always looking to hear from qualified and experienced healthcare professionals. Browse current vacancies and take the next step towards your next opportunity." />
-        <Story image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=88" title="Recruitment That Works For You" text="From contract recruitment and flexible staffing to permanent recruitment and remote staffing, we keep the process clear and focused on the right fit." />
+        <Story image="https://images.unsplash.com/photo-1773227059522-acc3ae46abdc?auto=format&fit=crop&w=1400&q=88" title="Recruitment That Works For You" text="From contract recruitment and flexible staffing to permanent recruitment and remote staffing, we keep the process clear and focused on the right fit." />
       </section>
 
       <section className="jobsHome">
