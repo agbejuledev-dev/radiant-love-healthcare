@@ -7,7 +7,7 @@ type LogoProps = {
 };
 
 const COLORS = {
-  default: { navy: "#0A1A4A", blue: "#0B4EA2", sub: "#1B2540", gold1: "#E6C46E", gold2: "#B8862B" },
+  default: { navy: "#163B78", blue: "#1677D2", sub: "#425B7D", gold1: "#F4D47A", gold2: "#D09B35" },
   reversed: { navy: "#FFFFFF", blue: "#7FB0FF", sub: "#E8EEFF", gold1: "#EACB7A", gold2: "#C9A24D" },
 };
 
