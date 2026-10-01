@@ -11,7 +11,7 @@ import {
 
 const slides = [
   {
-    src: "/radiant-header.jpg",
+    src: "https://images.unsplash.com/photo-1765896387387-0538bc9f997e?auto=format&fit=crop&w=1800&q=90",
     alt: "Healthcare professional in blue scrubs supporting an older person",
   },
   {
