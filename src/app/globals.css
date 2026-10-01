@@ -235,6 +235,7 @@ video {
   object-fit: cover;
   object-position: center center;
   filter: brightness(1.14) saturate(1);
+}
 
 .heroOverlay {
   position: absolute;
