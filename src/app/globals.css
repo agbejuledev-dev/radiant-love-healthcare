@@ -640,8 +640,8 @@ video {
   height: 100%;
   display: block;
   object-fit: cover;
-  filter: brightness(1.12) saturate(1.10) contrast(1.10);
-  transform: scale(1.012);
+  filter: brightness(1.18) saturate(1.18) contrast(1.16);
+  transform: scale(1.025);
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
 }
 
@@ -655,7 +655,7 @@ video {
 
 .storyPhoto:hover img {
   transform: scale(1.045);
-  filter: brightness(1.16) saturate(1.12) contrast(1.12);
+  filter: brightness(1.22) saturate(1.20) contrast(1.18);
 }
 
 .storyCopy {
