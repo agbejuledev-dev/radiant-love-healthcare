@@ -11,6 +11,10 @@ import {
 
 const slides = [
   {
+    src: "https://img1.wsimg.com/isteam/ip/b644e0e4-d900-489b-9975-19a423eb179e/Dialysys%202.jpg",
+    alt: "Healthcare professional in blue scrubs speaking with an older man at home",
+  },
+  {
     src: "https://images.unsplash.com/photo-1756312177216-f41bb3ac7205?auto=format&fit=crop&w=1800&q=90",
     alt: "Older person smiling at home",
   },
