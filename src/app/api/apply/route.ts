@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server'; export async function POST(req:Request){const form=await req.formData();const name=form.get('name');const email=form.get('email');const cv=form.get('cv');if(!name||!email||!(cv instanceof File)||cv.size===0)return NextResponse.json({error:'Missing required fields'},{status:400});return NextResponse.json({ok:true});}

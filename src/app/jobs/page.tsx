@@ -1,0 +1,45 @@
+import Link from "next/link";
+import { ArrowRight, Mail } from "lucide-react";
+import { site } from "@/lib/site";
+
+export default function Jobs() {
+  return (
+    <>
+      <section className="pageHero compactHero">
+        <span className="eyebrow">Job opportunities</span>
+        <h1>Looking for your next healthcare role?</h1>
+        <p>
+          We connect healthcare professionals with opportunities across the UK.
+          For our latest vacancies, get in touch with our recruitment team.
+        </p>
+      </section>
+
+      <section className="jobsEmailSection" aria-labelledby="jobs-email-title">
+        <div className="jobsEmailCard">
+          <div className="jobsEmailIcon" aria-hidden="true">
+            <Mail size={25} strokeWidth={1.6} />
+          </div>
+
+          <span className="eyebrow">Current vacancies</span>
+          <h2 id="jobs-email-title">Email us for jobs.</h2>
+          <p>
+            We regularly hear from healthcare organisations with new roles.
+            Send us an email with the type of role you are looking for, your
+            location and a little about your experience, and our team will
+            let you know about suitable opportunities.
+          </p>
+
+          <a className="jobsEmailLink" href={`mailto:${site.email}`}>
+            {site.email}
+            <ArrowRight size={16} />
+          </a>
+
+          <div className="jobsEmailActions">
+            <Link href="/apply">SUBMIT YOUR CV <ArrowRight size={15} /></Link>
+            <Link href="/contact">CONTACT US <ArrowRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
