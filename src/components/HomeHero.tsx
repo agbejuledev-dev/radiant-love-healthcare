@@ -11,7 +11,7 @@ import {
 
 const slides = [
   {
-    src: "https://img1.wsimg.com/isteam/ip/b644e0e4-d900-489b-9975-19a423eb179e/Dialysys%202.jpg/:/rs=w:1240,h:620,cg:true,m/cr=w:1240,h:620",
+    src: "https://img1.wsimg.com/isteam/ip/b644e0e4-d900-489b-9975-19a423eb179e/Dialysys%202.jpg",
     alt: "Healthcare professional in blue scrubs supporting an older person",
   },
   {
