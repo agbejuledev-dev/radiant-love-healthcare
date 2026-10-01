@@ -233,7 +233,7 @@ video {
 
 .heroImage {
   object-fit: cover;
-}
+  filter: brightness(1.08) saturate(0.96);\n}
 
 .heroOverlay {
   position: absolute;
@@ -241,10 +241,10 @@ video {
   z-index: -2;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.62) 36%,
-    rgba(0, 0, 0, 0.3) 72%,
-    rgba(0, 0, 0, 0.18) 100%
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.14) 38%,
+    rgba(0, 0, 0, 0.05) 72%,
+    rgba(0, 0, 0, 0.02) 100%
   );
 }
 
