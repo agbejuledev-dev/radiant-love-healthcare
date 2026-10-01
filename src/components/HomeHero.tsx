@@ -32,7 +32,6 @@ const AUTOPLAY_DELAY = 3000;
 
 export default function HomeHero() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
@@ -103,11 +102,10 @@ export default function HomeHero() {
   /*
    * Automatic carousel.
    *
-   * It intentionally pauses while the user is hovering
-   * over the hero and when the browser tab is hidden.
+   * It pauses only when the browser tab is hidden.
    */
   useEffect(() => {
-    if (reducedMotion || isHovered || isHidden) {
+    if (reducedMotion || isHidden) {
       return;
     }
 
@@ -118,13 +116,13 @@ export default function HomeHero() {
     return () => {
       window.clearInterval(timer);
     };
-  }, [isHovered, isHidden, reducedMotion]);
+  }, [isHidden, reducedMotion]);
 
   /*
    * Reset autoplay after manual navigation.
    *
    * Changing activeSlide causes the autoplay effect above
-   * to restart its 5.5 second timer.
+   * to restart its 3 second timer.
    */
   const goToSlide = useCallback((index: number) => {
     setActiveSlide(index);
@@ -176,8 +174,6 @@ export default function HomeHero() {
     <section
       className="hero"
       aria-label="Radiant-love Healthcare recruitment"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
