@@ -178,7 +178,7 @@ video {
 }
 
 .navApply:hover {
-  background: #fdfefe;
+  background: #163b5f;
   color: #fff;
 }
 
@@ -597,6 +597,7 @@ video {
 
 .storyPhoto img {
   object-fit: cover;
+  filter: brightness(1.16) saturate(1.02) contrast(0.99);
   transition: transform 0.7s ease;
 }
 
@@ -732,7 +733,7 @@ video {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  background: #080808;
+  background: #163b5f;
   color: #fff;
 }
 
@@ -764,7 +765,7 @@ video {
 
 .footer {
   padding: 58px 5% 24px;
-  background: #111;
+  background: #163b5f;
   color: #fff;
 }
 
@@ -954,7 +955,7 @@ video {
 .darkBand {
   padding: 95px 20px;
   text-align: center;
-  background: #000;
+  background: #163b5f;
   color: #fff;
 }
 
