@@ -63,7 +63,7 @@ export default function Home() {
           <div className="dbsDetails">
             <div className="dbsDetail">
               <span className="dbsLine" />
-              <p>Enhanced DBS disclosure for every candidate, no hidden charges</p>
+              <p>Enhanced DBS disclosure for every candidate</p>
             </div>
             <div className="dbsDetail">
               <span className="dbsLine" />
@@ -72,10 +72,6 @@ export default function Home() {
             <div className="dbsDetail">
               <span className="dbsLine" />
               <p>References verified directly before any placement is confirmed</p>
-            </div>
-            <div className="dbsDetail">
-              <span className="dbsLine" />
-              <p>Pay only for what you need, when you need it — no registration fees</p>
             </div>
           </div>
         </div>
