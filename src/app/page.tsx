@@ -54,15 +54,29 @@ export default function Home() {
 
       <section className="dbs">
         <div className="dbsInner">
-          <span className="eyebrow">Training &amp; compliance</span>
-          <h2>Training &amp; compliance</h2>
-          <p className="dbsIntro">Every candidate is checked and trained before they're ever put forward for a shift.</p>
-          <ul className="dbsList">
-            <li>Enhanced DBS disclosure for every candidate, no hidden charges</li>
-            <li>CPD-accredited training and refresher courses, in person or online</li>
-            <li>References verified directly before any placement is confirmed</li>
-            <li>Pay only for what you need, when you need it — no registration fees</li>
-          </ul>
+          <div className="dbsHeading">
+            <span className="eyebrow">Training &amp; compliance</span>
+            <h2>Prepared, checked and ready to work.</h2>
+            <p className="dbsIntro">Every candidate is checked and trained before they're ever put forward for a shift.</p>
+          </div>
+          <div className="dbsList">
+            <article className="dbsItem">
+              <span className="dbsNumber">01</span>
+              <div><h3>Enhanced DBS disclosure</h3><p>Enhanced DBS disclosure for every candidate, with no hidden charges.</p></div>
+            </article>
+            <article className="dbsItem">
+              <span className="dbsNumber">02</span>
+              <div><h3>CPD-accredited training</h3><p>Training and refresher courses available in person or online.</p></div>
+            </article>
+            <article className="dbsItem">
+              <span className="dbsNumber">03</span>
+              <div><h3>Verified references</h3><p>References are verified directly before any placement is confirmed.</p></div>
+            </article>
+            <article className="dbsItem">
+              <span className="dbsNumber">04</span>
+              <div><h3>No registration fees</h3><p>Pay only for what you need, when you need it — no registration fees.</p></div>
+            </article>
+          </div>
         </div>
       </section>
 
