@@ -54,9 +54,15 @@ export default function Home() {
 
       <section className="dbs">
         <div className="dbsInner">
-          <span className="eyebrow">DBS Disclosure Service</span>
-          <h2>Simple, transparent DBS disclosure.</h2>
-          <p>There is no registration fee or hidden charges. Simply pay for what you need, when you need it.</p>
+          <span className="eyebrow">Training &amp; compliance</span>
+          <h2>Training &amp; compliance</h2>
+          <p className="dbsIntro">Every candidate is checked and trained before they're ever put forward for a shift.</p>
+          <ul className="dbsList">
+            <li>Enhanced DBS disclosure for every candidate, no hidden charges</li>
+            <li>CPD-accredited training and refresher courses, in person or online</li>
+            <li>References verified directly before any placement is confirmed</li>
+            <li>Pay only for what you need, when you need it — no registration fees</li>
+          </ul>
         </div>
       </section>
 
