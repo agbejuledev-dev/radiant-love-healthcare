@@ -67,7 +67,7 @@ export default function Home() {
             </div>
             <div className="dbsDetail">
               <span className="dbsLine" />
-              <p>CPD-accredited training and refresher courses, in person or online</p>
+              <p>CPD-accredited training and refresher courses</p>
             </div>
             <div className="dbsDetail">
               <span className="dbsLine" />
