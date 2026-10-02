@@ -53,8 +53,11 @@ export default function Home() {
       </section>
 
       <section className="dbs">
-        <strong>DBS Disclosure Service</strong>
-        <p>There is no registration fee or hidden charges. Simply pay for what you need, when you need it.</p>
+        <div className="dbsInner">
+          <span className="eyebrow">DBS Disclosure Service</span>
+          <h2>Simple, transparent DBS disclosure.</h2>
+          <p>There is no registration fee or hidden charges. Simply pay for what you need, when you need it.</p>
+        </div>
       </section>
 
       <section className="finalCta">
