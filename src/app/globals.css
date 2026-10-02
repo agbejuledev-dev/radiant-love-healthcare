@@ -759,43 +759,74 @@ video {
 }
 
 .dbs {
-  padding: 92px 7%;
-  background: #f5f8fc;
+  position: relative;
+  padding: 110px 7%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(22, 119, 210, 0.10), transparent 28%),
+    radial-gradient(circle at 92% 80%, rgba(208, 155, 53, 0.08), transparent 24%),
+    #f4f8fc;
+}
+
+.dbs::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -150px;
+  top: -170px;
+  border-radius: 50%;
+  border: 1px solid rgba(22, 119, 210, 0.10);
 }
 
 .dbsInner {
-  width: min(1120px, 100%);
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
   margin: 0 auto;
-  padding: 62px 68px;
-  border-radius: 28px;
-  background: #fff;
-  border: 1px solid rgba(22, 59, 120, 0.08);
-  box-shadow: 0 18px 55px rgba(22, 59, 120, 0.07);
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(420px, 1.18fr);
+  gap: 72px;
+  align-items: center;
 }
 
 .dbs .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   color: #1677d2;
+  font-weight: 800;
+}
+
+.dbs .eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #d09b35;
 }
 
 .dbs h2 {
-  margin: 12px 0 14px;
+  max-width: 520px;
+  margin: 16px 0 18px;
   color: var(--ink);
-  font-size: clamp(32px, 4vw, 50px);
-  line-height: 1.08;
+  font-size: clamp(38px, 4.5vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
 }
 
 .dbsIntro {
-  max-width: 760px;
-  margin: 0 0 28px;
+  max-width: 500px;
+  margin: 0;
   color: #5d6b7c;
   font-size: 17px;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .dbsList {
   display: grid;
-  gap: 18px;
-  max-width: 900px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -803,34 +834,83 @@ video {
 
 .dbsList li {
   position: relative;
-  padding-left: 28px;
+  min-height: 150px;
+  padding: 25px 24px 24px 58px;
+  border: 1px solid rgba(22, 59, 120, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
   color: #26384d;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
+  box-shadow: 0 12px 30px rgba(22, 59, 120, 0.055);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.dbsList li:hover {
+  transform: translateY(-5px);
+  border-color: rgba(22, 119, 210, 0.22);
+  box-shadow: 0 18px 38px rgba(22, 59, 120, 0.10);
 }
 
 .dbsList li::before {
   content: "✓";
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 20px;
+  top: 24px;
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #eaf4ff;
   color: #1677d2;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 900;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .dbs {
-    padding: 60px 20px;
+    padding: 80px 6%;
   }
 
   .dbsInner {
-    padding: 38px 26px;
-    border-radius: 22px;
+    grid-template-columns: 1fr;
+    gap: 42px;
   }
 
-  .dbsIntro,
-  .dbsList li {
+  .dbs h2,
+  .dbsIntro {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dbs {
+    padding: 65px 20px;
+  }
+
+  .dbs::before {
+    width: 240px;
+    height: 240px;
+    right: -120px;
+    top: -100px;
+  }
+
+  .dbs h2 {
+    font-size: clamp(34px, 11vw, 46px);
+  }
+
+  .dbsIntro {
     font-size: 15px;
+  }
+
+  .dbsList {
+    grid-template-columns: 1fr;
+  }
+
+  .dbsList li {
+    min-height: auto;
+    padding: 22px 20px 22px 55px;
   }
 }
 
