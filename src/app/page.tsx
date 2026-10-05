@@ -29,9 +29,6 @@ export default function Home() {
 
       <section className="serviceStrip">
         <div className="serviceStripInner">
-          <LinkService title="Contract Recruitment" text="Experienced professionals for defined workforce requirements." />
-          <LinkService title="Flexible Recruitment" text="Responsive staffing support when schedules and demand change." />
-          <LinkService title="Permanent Recruitment" text="Long-term placements focused on the right fit for both sides." />
           <LinkService title="Remote Staffing" text="Suitable professionals for remote and digitally supported roles." />
         </div>
       </section>
