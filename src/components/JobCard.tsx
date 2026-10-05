@@ -1,2 +1,2 @@
 import Link from 'next/link'; import {ArrowUpRight} from 'lucide-react';
-export default function JobCard({job,compact=false}:{job:any;compact?:boolean}){return <article className={compact?'jobCard compact':'jobCard'}><div><span className="jobMeta">{job.category}</span><h3>{job.title}</h3><p>{job.location} · {job.type}</p></div><Link href={`/jobs/${job.slug}`}>VIEW JOB <ArrowUpRight size={15}/></Link></article>}
+export default function JobCard({job,compact=false}:{job:any;compact?:boolean}){return <article className={compact?'jobCard compact':'jobCard'}><div><h3>{job.title}</h3><p>{job.location}</p></div><Link href={`/jobs/${job.slug}`}>VIEW JOB <ArrowUpRight size={15}/></Link></article>}
