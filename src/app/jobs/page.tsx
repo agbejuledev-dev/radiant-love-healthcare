@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
-import { site } from "@/lib/site";
+
+const EMAIL = "cngwendson@radiant-lovehealthcare.co.uk";
 
 export default function Jobs() {
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent("Job Enquiry - Radiant-love Healthcare")}`;
+
   return (
     <>
       <section className="pageHero compactHero">
@@ -29,8 +32,13 @@ export default function Jobs() {
             let you know about suitable opportunities.
           </p>
 
-          <a className="jobsEmailLink" href={`mailto:${site.email}`}>
-            {site.email}
+          <a
+            className="jobsEmailLink"
+            href={gmailUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            SEND US AN EMAIL
             <ArrowRight size={16} />
           </a>
 
