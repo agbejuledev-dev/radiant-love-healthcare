@@ -33,6 +33,18 @@ export default function Footer() {
       <div className="footerCopyright">
         © {new Date().getFullYear()} Radiant-love Healthcare Ltd.
       </div>
+
+      <div className="footerDeveloperCredit">
+        Website developed by{" "}
+        <a
+          href="https://portfolio-rebuild-red.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Oluwatobiloba Agbejule's portfolio (opens in a new tab)"
+        >
+          Oluwatobiloba Agbejule
+        </a>
+      </div>
     </footer>
   );
 }
