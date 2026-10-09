@@ -969,6 +969,28 @@ video {
   letter-spacing: 0.02em;
 }
 
+.footerDeveloperCredit {
+  margin: 8px auto 0;
+  color: #b8c7d6;
+  text-align: center;
+  font: 400 12px/1.7 var(--font-montserrat), Montserrat, sans-serif;
+}
+
+.footerDeveloperCredit a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.footerDeveloperCredit a:hover,
+.footerDeveloperCredit a:focus-visible {
+  color: #d6e8ff;
+  text-decoration-color: currentColor;
+}
+
 /* =========================================================
    INTERIOR PAGES
    ========================================================= */
