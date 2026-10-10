@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Healthcare Recruitment Insights",
+  description: "News, guidance and updates from Radiant-love Healthcare on healthcare recruitment and staffing in the UK.",
+  alternates: { canonical: "/blog" },
+};
+
 export default function Blog() {
   return (
     <section className="pageHero">
