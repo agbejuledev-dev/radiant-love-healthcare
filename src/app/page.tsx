@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { jobs } from "@/lib/site";
 import JobCard from "@/components/JobCard";
 import HomeHero from "@/components/HomeHero";
+
+export const metadata: Metadata = {
+  title: "Healthcare Recruitment & Staffing Across the UK",
+  description: "Find healthcare recruitment and staffing support across the UK. Radiant-love Healthcare connects nurses, healthcare assistants, support workers and employers through contract, flexible and permanent recruitment.",
+  alternates: { canonical: "/" },
+};
 
 const images = [
   "https://images.unsplash.com/photo-1773227055624-07b515ba87c5?auto=format&fit=crop&w=1400&q=88",
