@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Healthcare Jobs Across the UK",
+  description: "Explore healthcare job opportunities with Radiant-love Healthcare. Contact our recruitment team about nursing, care and support roles across the UK.",
+  alternates: { canonical: "/jobs" },
+};
 
 const EMAIL = "cngwendson@radiant-lovehealthcare.co.uk";
 
